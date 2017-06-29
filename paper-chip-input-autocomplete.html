@@ -101,13 +101,12 @@ Paper-chip's represent complex entities in small blocks, such as a contact.
                         type: String,
                         value: ''
                     },
-                    // _items: {
-                    //     type: Array,
-                    //     value: function () {
-                    //         return [];
-                    //     }
-                    // },
-                    items: Array,
+                    items: {
+                        type: Array,
+                        value: function () {
+                            return [];
+                        }
+                    },
                     _selectedSuggestionId: {
                         type: Object,
                         observer: '_selectPaperItem'
@@ -173,7 +172,7 @@ Paper-chip's represent complex entities in small blocks, such as a contact.
 
             _filterItems() {
                 let filteredByString = this.source.filter(element => this._filterBySearchString(element));
-
+                if(!this.items) this.items = [];
                 if (filteredByString.length > 0 && this.items.length) {
                     this._filteredSource = filteredByString.filter(element => this._filterByExistingPaperChip(
                         element));;
