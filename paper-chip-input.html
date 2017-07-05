@@ -64,6 +64,7 @@ Paper-chip's represent complex entities in small blocks, such as a contact.
             }
 
             _keydown(event) {
+                if(!this.items) this.items = [];
                 const keyCode_backspace = '8';
                 const keyCode_enter = '13';
 
