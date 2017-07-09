@@ -20,7 +20,7 @@ Paper-chip's represent complex entities in small blocks, such as a contact.
 
         </style>
 
-        <paper-input value="{{_value}}" label="[[label]]" on-keydown="_keydown" items="[[items]]">
+        <paper-input value="{{_value}}" label="[[label]]" on-keydown="_keydown" items="[[items]]" readonly="[[readonly]]">
             <slot id="slot" name="input" slot="prefix"></slot>
             <slot id="slot2" name="input2" slot="prefix">
                 <dom-repeat items="[[items]]">
